@@ -1,12 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>boletim digital</title>
+  <meta charset="UTF-8" />
+  <!-- Garante que o site fique bom no celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boletim Digital</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+
+  <!-- CABEÇALHO: título e subtítulo -->
+  <header class="cabecalho">
+    <h1>Boletim Digital</h1>
+    <p class="subtitulo">8º Ano — Estudante Exemplo</p>
+  </header>
+
+  <main class="conteudo">
+
+    <!-- ÁREA DOS CARDS DE RESUMO -->
+    <!-- Os valores internos serão preenchidos pelo script.js -->
+    <section class="cards">
+
+      <div class="card">
+        <span class="card-rotulo">Média geral</span>
+        <span class="card-valor" id="card-media-geral">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-rotulo">Total de faltas</span>
+        <span class="card-valor" id="card-total-faltas">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-rotulo">Bom desempenho</span>
+        <span class="card-valor" id="card-bom-desempenho">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-rotulo">Precisam de atenção</span>
+        <span class="card-valor" id="card-atencao">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-rotulo">Frequência</span>
+        <span class="card-valor" id="card-frequencia">—</span>
+        <span class="card-extra" id="card-frequencia-texto">—</span>
+      </div>
+
+    </section>
+
+    <!-- TABELA DE NOTAS -->
+    <section class="tabela-area">
+      <h2>Notas por disciplina</h2>
+
+      <!-- Em telas pequenas a tabela rola para o lado -->
+      <div class="tabela-container">
+        <table class="boletim">
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>1º Tri</th>
+              <th>2º Tri</th>
+              <th>3º Tri</th>
+              <th>Média</th>
+              <th>Faltas</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <!-- O corpo da tabela será preenchido pelo script.js -->
+          <tbody id="corpo-tabela"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé simples -->
+  <footer class="rodape">
+    <p>Projeto escolar — dados fictícios para demonstração.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

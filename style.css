@@ -1,0 +1,211 @@
+/* ===== CORES DO PROJETO (variáveis para reaproveitar) ===== */
+:root {
+  --rosa-claro: #fde4ef;      /* fundo geral */
+  --rosa: #f4a6c6;            /* bordas e destaques */
+  --rosa-escuro: #c96b95;     /* textos de destaque */
+  --lilas: #c9a7e8;           /* cor secundária */
+  --lilas-claro: #ede0f7;     /* fundo suave lilás */
+  --texto: #4a3b45;           /* cor do texto em geral */
+  --branco: #ffffff;
+}
+
+/* ===== RESET BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--rosa-claro);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+/* ===== CABEÇALHO EM DEGRADÊ ROSA → LILÁS ===== */
+.cabecalho {
+  background: linear-gradient(135deg, var(--rosa) 0%, var(--lilas) 100%);
+  color: var(--branco);
+  text-align: center;
+  padding: 32px 16px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.cabecalho h1 {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* ===== ÁREA PRINCIPAL ===== */
+.conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* ===== CARDS DE RESUMO ===== */
+.cards {
+  display: grid;
+  /* No celular fica 1 coluna; em telas maiores vira várias */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.card {
+  background-color: var(--branco);
+  border: 2px solid var(--rosa);
+  border-radius: 16px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(201, 107, 149, 0.12);
+}
+
+/* Detalhe lilás no topo de cada card */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-color: var(--lilas);
+}
+
+.card-rotulo {
+  font-size: 0.85rem;
+  color: var(--rosa-escuro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-valor {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--texto);
+}
+
+.card-extra {
+  font-size: 0.8rem;
+  color: var(--lilas);
+  font-weight: 600;
+}
+
+/* ===== TABELA ===== */
+.tabela-area h2 {
+  font-size: 1.3rem;
+  color: var(--rosa-escuro);
+  margin-bottom: 12px;
+}
+
+.tabela-container {
+  /* Permite rolagem lateral em telas pequenas */
+  overflow-x: auto;
+  background-color: var(--branco);
+  border: 2px solid var(--rosa);
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 0 2px 6px rgba(201, 107, 149, 0.12);
+}
+
+.boletim {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px; /* garante que a tabela não "esprema" demais */
+}
+
+.boletim thead th {
+  background-color: var(--lilas);
+  color: var(--branco);
+  padding: 10px 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Cantos arredondados só no primeiro e último cabeçalho */
+.boletim thead th:first-child {
+  border-top-left-radius: 10px;
+}
+.boletim thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.boletim tbody td {
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--lilas-claro);
+}
+
+/* Nome da disciplina fica alinhado à esquerda */
+.boletim tbody td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: var(--rosa-escuro);
+}
+
+/* Linha alternada para facilitar a leitura */
+.boletim tbody tr:nth-child(even) {
+  background-color: #fdf5fa;
+}
+
+/* Selos de situação */
+.selo {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.selo-bom {
+  background-color: #d8f2dd;
+  color: #2f7d43;
+}
+
+.selo-atencao {
+  background-color: #fbe0e6;
+  color: #b03a5b;
+}
+
+.selo-sem-nota {
+  background-color: var(--lilas-claro);
+  color: #7a5aa0;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  text-align: center;
+  padding: 18px;
+  font-size: 0.8rem;
+  color: var(--rosa-escuro);
+}
+
+/* ===== AJUSTES PARA CELULAR ===== */
+@media (max-width: 480px) {
+  .cabecalho h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-valor {
+    font-size: 1.3rem;
+  }
+
+  .conteudo {
+    padding: 16px 10px 32px;
+  }
+}
