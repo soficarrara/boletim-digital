@@ -200,7 +200,7 @@ function preencherCards() {
       if (media >= MEDIA_MINIMA) {
         bonsDesempenhos++;
       } else {
-        preciamAtencao++;
+        precisamAtencao++;
       }
     }
   });
