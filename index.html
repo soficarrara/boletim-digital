@@ -17,61 +17,111 @@
 
   <main class="conteudo">
 
-    <!-- ÁREA DOS CARDS DE RESUMO -->
-    <!-- Os valores internos serão preenchidos pelo script.js -->
-    <section class="cards">
-
-      <div class="card">
-        <span class="card-rotulo">Média geral</span>
-        <span class="card-valor" id="card-media-geral">—</span>
-      </div>
-
-      <div class="card">
-        <span class="card-rotulo">Total de faltas</span>
-        <span class="card-valor" id="card-total-faltas">—</span>
-      </div>
-
-      <div class="card">
-        <span class="card-rotulo">Bom desempenho</span>
-        <span class="card-valor" id="card-bom-desempenho">—</span>
-      </div>
-
-      <div class="card">
-        <span class="card-rotulo">Precisam de atenção</span>
-        <span class="card-valor" id="card-atencao">—</span>
-      </div>
-
-      <div class="card">
-        <span class="card-rotulo">Frequência</span>
-        <span class="card-valor" id="card-frequencia">—</span>
-        <span class="card-extra" id="card-frequencia-texto">—</span>
-      </div>
-
-    </section>
-
-    <!-- TABELA DE NOTAS -->
-    <section class="tabela-area">
-      <h2>Notas por disciplina</h2>
-
-      <!-- Em telas pequenas a tabela rola para o lado -->
-      <div class="tabela-container">
-        <table class="boletim">
-          <thead>
-            <tr>
-              <th>Disciplina</th>
-              <th>1º Tri</th>
-              <th>2º Tri</th>
-              <th>3º Tri</th>
-              <th>Média</th>
-              <th>Faltas</th>
-              <th>Situação</th>
-            </tr>
-          </thead>
-          <!-- O corpo da tabela será preenchido pelo script.js -->
-          <tbody id="corpo-tabela"></tbody>
-        </table>
+    <!-- ÁREA DE ACESSO (PIN) -->
+    <section id="area-login" class="area-login">
+      <div class="card-login">
+        <h2>Acesso ao Boletim</h2>
+        <p class="login-info">Turma <strong>8B</strong> — Nº de Chamada <strong>27</strong></p>
+        <div class="campo-login">
+          <label for="campo-pin">Digite seu PIN:</label>
+          <input type="password" id="campo-pin" placeholder="****" autocomplete="off" maxlength="10" />
+        </div>
+        <button id="btn-entrar" type="button" class="btn-principal">Entrar</button>
+        <div id="mensagem-login" class="mensagem-status"></div>
       </div>
     </section>
+
+    <!-- CONTEÚDO DO BOLETIM (OCULTO ANTES DO LOGIN) -->
+    <div id="area-boletim" class="area-boletim" style="display: none;">
+
+      <!-- PAINEL DE AÇÕES -->
+      <div class="painel-acoes">
+        <button id="btn-alterar-dados" type="button" class="btn-secundario">Alterar dados</button>
+      </div>
+
+      <!-- ÁREA DOS CARDS DE RESUMO -->
+      <!-- Os valores internos serão preenchidos pelo script.js -->
+      <section class="cards">
+
+        <div class="card">
+          <span class="card-rotulo">Média geral</span>
+          <span class="card-valor" id="card-media-geral">—</span>
+        </div>
+
+        <div class="card">
+          <span class="card-rotulo">Total de faltas</span>
+          <span class="card-valor" id="card-total-faltas">—</span>
+        </div>
+
+        <div class="card">
+          <span class="card-rotulo">Bom desempenho</span>
+          <span class="card-valor" id="card-bom-desempenho">—</span>
+        </div>
+
+        <div class="card">
+          <span class="card-rotulo">Precisam de atenção</span>
+          <span class="card-valor" id="card-atencao">—</span>
+        </div>
+
+        <div class="card">
+          <span class="card-rotulo">Frequência</span>
+          <span class="card-valor" id="card-frequencia">—</span>
+          <span class="card-extra" id="card-frequencia-texto">—</span>
+        </div>
+
+      </section>
+
+      <!-- TABELA DE NOTAS (VISUALIZAÇÃO) -->
+      <section class="tabela-area" id="secao-tabela-view">
+        <h2>Notas por disciplina</h2>
+
+        <!-- Em telas pequenas a tabela rola para o lado -->
+        <div class="tabela-container">
+          <table class="boletim">
+            <thead>
+              <tr>
+                <th>Disciplina</th>
+                <th>1º Tri</th>
+                <th>2º Tri</th>
+                <th>3º Tri</th>
+                <th>Média</th>
+                <th>Faltas</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <!-- O corpo da tabela será preenchido pelo script.js -->
+            <tbody id="corpo-tabela"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SEÇÃO DE EDIÇÃO (OCULTA INICIALMENTE) -->
+      <section id="secao-edicao" class="secao-edicao" style="display: none;">
+        <h2>Editar Notas e Faltas</h2>
+        <div id="mensagem-edicao" class="mensagem-status"></div>
+        <div class="tabela-container">
+          <table class="boletim tabela-edicao">
+            <thead>
+              <tr>
+                <th>Disciplina</th>
+                <th>1º Tri (Nota)</th>
+                <th>2º Tri (Nota)</th>
+                <th>3º Tri (Nota)</th>
+                <th>1º Tri (Faltas)</th>
+                <th>2º Tri (Faltas)</th>
+                <th>3º Tri (Faltas)</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-tabela-edicao"></tbody>
+          </table>
+        </div>
+        <div class="acoes-edicao">
+          <button id="btn-salvar" type="button" class="btn-principal">Salvar alterações</button>
+          <button id="btn-cancelar" type="button" class="btn-secundario">Cancelar</button>
+        </div>
+      </section>
+
+    </div>
 
   </main>
 

@@ -104,7 +104,8 @@ body {
 }
 
 /* ===== TABELA ===== */
-.tabela-area h2 {
+.tabela-area h2,
+.secao-edicao h2 {
   font-size: 1.3rem;
   color: var(--rosa-escuro);
   margin-bottom: 12px;
@@ -208,4 +209,154 @@ body {
   .conteudo {
     padding: 16px 10px 32px;
   }
+}
+
+/* ===== ESTILOS ADICIONAIS — ACESSO & EDIÇÃO ===== */
+.area-login {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.card-login {
+  background-color: var(--branco);
+  border: 2px solid var(--rosa);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(201, 107, 149, 0.15);
+}
+
+.card-login h2 {
+  color: var(--rosa-escuro);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.login-info {
+  font-size: 0.9rem;
+  color: var(--texto);
+  margin-bottom: 20px;
+}
+
+.campo-login {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.campo-login label {
+  font-size: 0.85rem;
+  color: var(--rosa-escuro);
+  font-weight: 600;
+}
+
+.campo-login input {
+  padding: 10px 14px;
+  border: 2px solid var(--lilas);
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+}
+
+.campo-login input:focus {
+  border-color: var(--rosa-escuro);
+}
+
+.btn-principal {
+  background-color: var(--rosa-escuro);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.btn-principal:hover {
+  background-color: #b05780;
+}
+
+.btn-secundario {
+  background-color: var(--lilas-claro);
+  color: var(--rosa-escuro);
+  border: 2px solid var(--lilas);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-secundario:hover {
+  background-color: #e0d0f2;
+}
+
+.mensagem-status {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-height: 20px;
+}
+
+.mensagem-status.erro {
+  color: #b03a5b;
+}
+
+.mensagem-status.sucesso {
+  color: #2f7d43;
+}
+
+.mensagem-status.info {
+  color: var(--rosa-escuro);
+}
+
+.painel-acoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.secao-edicao {
+  margin-top: 24px;
+}
+
+.tabela-edicao input {
+  width: 60px;
+  padding: 6px 4px;
+  border: 1px solid var(--lilas);
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.tabela-edicao input:focus {
+  border-color: var(--rosa-escuro);
+}
+
+.tabela-edicao input.campo-invalido {
+  border-color: #b03a5b;
+  background-color: #fbe0e6;
+}
+
+.acoes-edicao {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.acoes-edicao .btn-principal,
+.acoes-edicao .btn-secundario {
+  width: auto;
 }
