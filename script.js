@@ -200,7 +200,7 @@ function preencherCards() {
       if (media >= MEDIA_MINIMA) {
         bonsDesempenhos++;
       } else {
-        precisamAtencao++;
+        preciamAtencao++;
       }
     }
   });
@@ -217,12 +217,12 @@ function preencherCards() {
 
   // ATENÇÃO: este percentual é APENAS FICTÍCIO/DEMONSTRATIVO.
   // No futuro ele será calculado de outra forma (a partir dos dias letivos reais).
-  document.getElementById("card-frequencia").textContent = "92%";
-  document.getElementById("card-frequencia-texto").textContent = "Frequência adequada";
+  document.getElementById("card-frequencia").textContent = "95,2%";
+  document.getElementById("card-frequencia-texto").textContent = "Dentro do limite";
 }
 
-// ============================================================
-// INÍCIO — roda quando a página carrega
-// ============================================================
-preencherTabela();
-preencherCards();
+// Executa as funções principais assim que a página carrega completamente
+window.addEventListener("DOMContentLoaded", function () {
+  preencherTabela();
+  preencherCards();
+});
