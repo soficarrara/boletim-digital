@@ -196,22 +196,7 @@ body {
   color: var(--rosa-escuro);
 }
 
-/* ===== AJUSTES PARA CELULAR ===== */
-@media (max-width: 480px) {
-  .cabecalho h1 {
-    font-size: 1.5rem;
-  }
-
-  .card-valor {
-    font-size: 1.3rem;
-  }
-
-  .conteudo {
-    padding: 16px 10px 32px;
-  }
-}
-
-/* ===== ESTILOS ADICIONAIS — ACESSO & EDIÇÃO ===== */
+/* ===== ESTILOS DE ACESSO & EDIÇÃO ===== */
 .area-login {
   display: flex;
   justify-content: center;
@@ -359,4 +344,108 @@ body {
 .acoes-edicao .btn-principal,
 .acoes-edicao .btn-secundario {
   width: auto;
+}
+
+/* ===== ÁREA DOS GRÁFICOS ===== */
+.area-graficos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.grafico-card {
+  background-color: var(--branco);
+  border: 2px solid var(--rosa);
+  border-radius: 16px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(201, 107, 149, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.grafico-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-color: var(--lilas);
+}
+
+.grafico-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.grafico-card h2 {
+  font-size: 1rem;
+  color: var(--rosa-escuro);
+  margin-bottom: 12px;
+}
+
+.grafico-cabecalho h2 {
+  margin-bottom: 0;
+}
+
+.grafico-container {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 260px;
+}
+
+.grafico-container-alt {
+  min-height: 420px;
+}
+
+/* Badge de Perigo */
+.badge-perigo {
+  background-color: #fbe0e6;
+  color: #b03a5b;
+  border: 1px solid #b03a5b;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.card-perigo {
+  border-color: #b03a5b !important;
+}
+
+.card-perigo::before {
+  background-color: #b03a5b !important;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 992px) {
+  .area-graficos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .area-graficos {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cabecalho h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-valor {
+    font-size: 1.3rem;
+  }
+
+  .conteudo {
+    padding: 16px 10px 32px;
+  }
 }
